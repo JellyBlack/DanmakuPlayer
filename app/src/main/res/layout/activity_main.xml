@@ -1,0 +1,23 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/video_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <com.github.jellyblack.danmakuplayer.VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <master.flame.danmaku.ui.widget.DanmakuView
+        android:id="@+id/danmakuView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.github.jellyblack.danmakuplayer.MediaController
+        android:id="@+id/media_controller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="存储位置（覆盖默认位置，下次打开生效）"
+                android:textColor="@color/bilibili"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="外部存储"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/text_internal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="SD卡"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/text_external"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="OTG"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/text_otg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="自定义目录"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/text_custom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="弹幕设置"
+                android:textColor="@color/bilibili"
+                android:textSize="18sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_DanmakuEnabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="启用弹幕" />
+
+            <CheckBox
+                android:id="@+id/checkBox_DanmakuRulesEnabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="启用弹幕屏蔽规则" />
+
+            <EditText
+                android:id="@+id/text_DanmakuRulesPath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="规则文件路径，如/sdcard/rules.xml" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="弹幕展示模式"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton_mode0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="标准模式" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_mode1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="被屏蔽的弹幕展示为红色，其余展示为白色" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_mode2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="只显示被“屏蔽”的弹幕" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView_DanmakuTransparency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="不透明度"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_DanmakuTransparency"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="透明" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_DanmakuTransparency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="100" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="不透明" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_TextScale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="文字缩放"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_TextScale"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="小" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_TextScale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="50" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="大" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_RollSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="滚动速度"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_RollSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="快" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_RollSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="59" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="慢" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="展示的弹幕类型"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox_DISPLAY_TOP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="顶部" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_DISPLAY_BOTTOM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="底部" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_DISPLAY_ROLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="滚动" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox_DISPLAY_SPECIAL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="高级" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_DISPLAY_COLOR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="彩色" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_DISPLAY_DUPLICATE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="重复" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="同屏弹幕密度"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="自动调整" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="无限" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="自定义" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/layout_max"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="小" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="199"
+                    android:progress="29" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="大" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="弹幕样式"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton_Default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="默认" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_Shadow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="阴影" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_Stroken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="描边" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_Projection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="投影" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView_Shadow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="阴影半径"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_Shadow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="小" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_Shadow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="120" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="大" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_Stroken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="描边宽度"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_Stroken"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="小" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_Stroken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="120" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="大" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_Projection_OffsetX"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="X偏移量"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_Projection_OffsetX"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="小" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_Projection_OffsetX"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="75" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="大" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_Projection_OffsetY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Y偏移量"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_Projection_OffsetY"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="小" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_Projection_OffsetY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="75" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="大" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_Projection_Alpha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="投影不透明度"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_Projection_Alpha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="透明" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_Projection_Alpha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="255" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="不透明" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_MaximumLines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="最大显示行数"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/layout_MaximumLines"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="0" />
+
+                <SeekBar
+                    android:id="@+id/seekBar_MaximumLines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:max="51" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:gravity="left|center_vertical"
+                    android:text="不限制" />
+
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkBox_DanmakuBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="粗体" />
+
+            <CheckBox
+                android:id="@+id/checkBox_Overlapping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="允许重叠" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ShowFps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="显示FPS" />
+
+
+            <CheckBox
+                android:id="@+id/checkBox_fix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="兼容古董Android：抬高底边距" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_license"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="开放源代码许可" />
+
+                <Button
+                    android:id="@+id/button_github"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="去GitHub    " />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="完成" />
+
+</LinearLayout>
